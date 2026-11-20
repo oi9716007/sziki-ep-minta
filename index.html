@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SZIKI-ÉP Kft. – generálkivitelező Szeged | Közületi, intézményi és ipari beruházások</title>
+<meta name="description" content="A SZIKI-ÉP Kft. szegedi generálkivitelező: közintézmények, önkormányzatok, befektetők és cégek építési, felújítási és energetikai projektjei Szegeden és 100 km-es körzetében.">
+<link rel="icon" href="img/favicon.jpg">
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/Montserrat-Variable.woff2) format('woff2')}
+:root{
+  --navy:#023366;      /* szikiep.hu téma: fő szín */
+  --navy-d:#01234a;
+  --orange:#FF9933;    /* szikiep.hu téma: kiemelő szín */
+  --orange-d:#e5821c;
+  --grey:#6E6E6E;      /* szikiep.hu téma: szövegszürke */
+  --ink:#16202e;
+  --bg:#F4F6F9;
+  --line:#dde3ec;
+  --white:#fff;
+  --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:16px;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;color:var(--navy)}
+h1{font-size:clamp(1.9rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:700}
+p{margin:0 0 1em}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-d);margin-bottom:.7rem}
+.lead{font-size:1.1rem;color:var(--grey);max-width:720px}
+
+/* mintaoldal sáv */
+.demo-bar{background:#0b1220;color:#cbd5e1;font-size:.78rem;text-align:center;padding:6px 16px;letter-spacing:.02em}
+.demo-bar b{color:var(--orange)}
+
+/* fejléc */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.logo img{height:50px;width:auto}
+nav.main{display:flex;align-items:center;gap:26px}
+nav.main a{text-decoration:none;font-weight:600;font-size:.88rem;color:var(--navy);text-transform:uppercase;letter-spacing:.04em}
+nav.main a:hover{color:var(--orange-d)}
+.btn{display:inline-block;background:var(--orange);color:#1b1200;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:6px;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:.92rem;letter-spacing:.02em;transition:.2s}
+.btn:hover{background:var(--orange-d)}
+.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+nav.main .btn{padding:10px 18px;color:#1b1200;font-size:.82rem}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:6px;width:44px;height:44px;cursor:pointer;color:var(--navy)}
+.burger svg{width:22px;height:22px}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(120deg,var(--navy-d),var(--navy) 60%,#0a4a8f);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/kivitelezes.jpg) center/cover;opacity:.2;mix-blend-mode:luminosity}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--orange),#d94a2b 50%,var(--navy))}
+.hero .wrap{position:relative;padding-top:88px;padding-bottom:96px}
+.hero h1{color:#fff;max-width:820px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p.lead{color:#d6e1f0;font-size:1.15rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chips span{border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:6px 14px;font-size:.8rem;font-weight:600;color:#e6eefb;background:rgba(255,255,255,.06)}
+
+/* számok */
+.stats{background:#fff;margin-top:-44px;position:relative;z-index:2}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:var(--r);box-shadow:0 14px 40px rgba(2,51,102,.16);overflow:hidden}
+.stat{padding:28px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .n{font-size:2.1rem;font-weight:800;color:var(--navy);line-height:1.1}
+.stat .n small{font-size:1rem;font-weight:700;color:var(--orange-d)}
+.stat .l{font-size:.85rem;color:var(--grey);margin-top:6px}
+.note{font-size:.75rem;color:var(--grey);margin-top:12px}
+
+section{padding:84px 0}
+section.alt{background:var(--bg)}
+.head{margin-bottom:40px}
+
+/* referenciák */
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ref{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.ph{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;color:#7d8aa0;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  background:repeating-linear-gradient(135deg,#eef2f7 0 14px,#e6ebf2 14px 28px);border-bottom:1px solid var(--line);position:relative}
+.ph span{background:rgba(255,255,255,.85);padding:6px 12px;border-radius:99px;border:1px dashed #b7c2d3}
+.ref .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.tag{display:inline-block;align-self:flex-start;background:#fff3e3;color:#a85a00;font-weight:700;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:12px}
+.tag.own{background:#e6eefb;color:var(--navy)}
+.ref h3{margin-bottom:.4em}
+.ref dl{margin:12px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.88rem;border-top:1px solid var(--line);padding-top:14px}
+.ref dt{color:var(--grey);font-weight:600}
+.ref dd{margin:0;font-weight:600}
+.more{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 28px}
+.more ul{columns:2;column-gap:40px;margin:12px 0 0;padding-left:1.1em}
+.more li{margin-bottom:.5em;font-size:.93rem;break-inside:avoid}
+.more li span{color:var(--grey)}
+
+/* szolgáltatások */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;border-top:4px solid var(--orange)}
+.card .ic{width:46px;height:46px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card .ic svg{width:24px;height:24px}
+.card p{color:var(--grey);margin:0;font-size:.95rem}
+.card ul{margin:.6em 0 0;padding-left:1.1em;color:var(--grey);font-size:.9rem}
+
+/* megrendelők */
+.cust{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cust .c{background:#fff;border-left:4px solid var(--navy);padding:22px 24px;border-radius:0 var(--r) var(--r) 0;box-shadow:0 2px 12px rgba(2,51,102,.06)}
+.cust h3{font-size:1rem}
+.cust p{margin:0;color:var(--grey);font-size:.92rem}
+
+/* folyamat */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{position:relative;padding:22px 20px 20px;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+.step::before{counter-increment:s;content:counter(s);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#1b1200;font-weight:800;margin-bottom:12px}
+.step p{margin:0;color:var(--grey);font-size:.9rem}
+
+/* űrlap */
+.quote{background:var(--navy);color:#fff}
+.quote h2{color:#fff}
+.quote .wrapgrid{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:start}
+.quote .lead{color:#c9d7ea}
+.fit{margin-top:24px;padding:18px 20px;border:1px solid rgba(255,255,255,.22);border-radius:var(--r);background:rgba(255,255,255,.06);font-size:.92rem;color:#dbe6f5}
+.fit b{color:var(--orange)}
+form.rfq{background:#fff;color:var(--ink);border-radius:var(--r);padding:30px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:.95rem;padding:12px 13px;border:1px solid #c5cfdd;border-radius:6px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--orange);outline-offset:1px;border-color:var(--orange)}
+.field textarea{min-height:96px;resize:vertical}
+.warn{display:none;background:#fff1f0;border:1px solid #f1b4ae;color:#8a2a20;padding:12px 14px;border-radius:6px;font-size:.88rem;margin-bottom:16px}
+.warn.on{display:block}
+.okmsg{display:none;background:#eaf6ee;border:1px solid #a9d9b8;color:#17603a;padding:12px 14px;border-radius:6px;font-size:.88rem;margin-top:14px}
+.okmsg.on{display:block}
+.rule{font-size:.82rem;color:var(--grey);margin:4px 0 16px}
+form .btn[disabled]{opacity:.45;cursor:not-allowed}
+.demo-note{font-size:.76rem;color:var(--grey);margin:12px 0 0}
+
+/* lábléc */
+footer{background:#0b1a2e;color:#b9c6da;padding:56px 0 24px;font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;margin:0 0 12px;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+footer a{color:#e6eefb;text-decoration:none}
+footer a:hover{color:var(--orange)}
+footer .lg{background:#fff;border-radius:8px;padding:8px 14px;display:inline-block;margin-bottom:16px}
+footer .lg img{height:44px;width:auto}
+footer p{margin:0 0 .5em}
+.soc{display:flex;gap:12px;align-items:center;margin-top:8px}
+.soc a{display:inline-flex;align-items:center;gap:8px;border:1px dashed #5d7191;border-radius:6px;padding:8px 12px;font-size:.8rem;color:#b9c6da}
+.soc svg{width:18px;height:18px}
+.copy{border-top:1px solid #1e3150;margin-top:36px;padding-top:18px;font-size:.78rem;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (max-width:980px){
+  .stats .grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .refs,.cust{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .quote .wrapgrid{grid-template-columns:1fr;gap:32px}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .burger{display:inline-flex;align-items:center;justify-content:center}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 18px;box-shadow:0 12px 24px rgba(0,0,0,.08)}
+  nav.main.open{display:flex}
+  nav.main a{padding:14px 0;border-bottom:1px solid var(--line)}
+  nav.main .btn{margin-top:14px;text-align:center}
+  header.site .wrap{position:relative}
+  .hero .wrap{padding-top:56px;padding-bottom:80px}
+  section{padding:60px 0}
+  .refs,.cust,.svc,.steps{grid-template-columns:1fr}
+  .more ul{columns:1}
+  .f2{grid-template-columns:1fr;gap:0}
+  footer .cols{grid-template-columns:1fr;gap:28px}
+  .logo img{height:42px}
+  form.rfq{padding:22px 18px}
+}
+@media (max-width:420px){
+  .stats .grid{grid-template-columns:1fr}
+  .stat{border-right:0!important;border-bottom:1px solid var(--line)}
+  .stat:last-child{border-bottom:0}
+  .wrap{padding:0 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar"><b>Mintaoldal – javaslat.</b> Nem éles honlap, a tartalom egyeztetés alatt áll.</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="SZIKI-ÉP Kft. – főoldal"><img src="img/logo.png" alt="SZIKI-ÉP Építőipari kivitelező Kft. logó" width="146" height="50"></a>
+    <button class="burger" aria-label="Menü" aria-expanded="false" id="burger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="main" id="nav">
+      <a href="#referenciak">Referenciák</a>
+      <a href="#szolgaltatasok">Szolgáltatások</a>
+      <a href="#megrendeloink">Megrendelők</a>
+      <a href="#ajanlatkeres" class="btn">Ajánlatkérés</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--orange)">Generálkivitelezés · Szeged és 100 km-es körzete</div>
+    <h1>Generálkivitelezés közintézményeknek, önkormányzatoknak, <em>befektetőknek és cégeknek.</em></h1>
+    <p class="lead">A SZIKI-ÉP Kft. szegedi székhelyű generálkivitelező. Intézményi, ipari és energetikai beruházásokat viszünk végig közvetlenül a beruházó megbízásából, saját szakembergárdával, Szegeden és a 100 km-es körzetben.</p>
+    <div class="cta">
+      <a class="btn" href="#ajanlatkeres">Ajánlatot kérek</a>
+      <a class="btn ghost" href="#referenciak">Referenciáink</a>
+    </div>
+    <div class="chips"><span>Közbeszerzési tapasztalat</span><span>Középületek energetikai korszerűsítése</span><span>Tervezés-kivitelezés</span><span>Jellemzően 50–800 M Ft nettó projektméret</span></div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat"><div class="n">2007 <small>óta</small></div><div class="l">szegedi építőipari vállalkozás</div></div>
+      <div class="stat"><div class="n">16</div><div class="l">megnyert közbeszerzés 2019–2024 között</div></div>
+      <div class="stat"><div class="n">20+</div><div class="l">saját munkatárs: kivitelezők, építésvezetők, gépészek</div></div>
+      <div class="stat"><div class="n">2025</div><div class="l">VOSZ Országos Év Vállalkozója díj az ügyvezetőnek</div></div>
+    </div>
+    <p class="note">Források: nyilvános közbeszerzési adatbázisok (askTender), cégtár, VOSZ. Mintaoldal: a végleges számokat a cég hagyja jóvá.</p>
+  </div>
+</div>
+
+<section id="referenciak">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Kiemelt referenciák</div>
+      <h2>Amit eddig felépítettünk</h2>
+      <p class="lead">Három nagyobb projekt, amelyet nyilvános forrás is igazol. Az összegek kerekített, nettó értékek.</p>
+    </div>
+    <div class="refs">
+      <article class="ref">
+        <div class="ph"><span>Fotó helye</span></div>
+        <div class="body">
+          <span class="tag">Közintézmény · önkormányzat</span>
+          <h3>Kálvária sugárúti idősek otthona</h3>
+          <p style="color:var(--grey);font-size:.93rem;margin:0">Idősek otthona energetikai korszerűsítése, közbeszerzési eljárás nyerteseként.</p>
+          <dl><dt>Megrendelő</dt><dd>Szeged Megyei Jogú Város</dd><dt>Érték</dt><dd>kb. 620 M Ft nettó</dd><dt>Átadás</dt><dd>2023</dd><dt>Szerepünk</dt><dd>Kivitelező</dd></dl>
+        </div>
+      </article>
+      <article class="ref">
+        <div class="ph"><span>Fotó helye</span></div>
+        <div class="body">
+          <span class="tag">Kutatás · laboratórium</span>
+          <h3>Nemzeti Biotech Labor</h3>
+          <p style="color:var(--grey);font-size:.93rem;margin:0">Laboratórium kialakítása a Szegedi Biológiai Kutatóközpont területén.</p>
+          <dl><dt>Megrendelő</dt><dd>SzBK, Szeged</dd><dt>Érték</dt><dd>400 M Ft feletti szerződés</dd><dt>Időszak</dt><dd>2021</dd><dt>Szerepünk</dt><dd>Kivitelező</dd></dl>
+        </div>
+      </article>
+      <article class="ref">
+        <div class="ph"><span>Fotó helye</span></div>
+        <div class="body">
+          <span class="tag own">Saját beruházás</span>
+          <h3>Safari Hotel</h3>
+          <p style="color:var(--grey);font-size:.93rem;margin:0">Háromcsillagos, 34 szobás szálloda a Szegedi Vadaspark mellett, saját kivitelezői csapatunkkal építve.</p>
+          <dl><dt>Beruházó</dt><dd>saját beruházás</dd><dt>Költség</dt><dd>kb. 500 M Ft nettó</dd><dt>Átadás</dt><dd>2024. március</dd><dt>Szerepünk</dt><dd>Beruházó és kivitelező</dd></dl>
+        </div>
+      </article>
+    </div>
+
+    <div class="more">
+      <h3>További közületi és intézményi munkáink</h3>
+      <ul>
+        <li><b>SZTE Mesterséges Intelligencia Labor</b> <span>– Szegedi Tudományegyetem, 2023</span></li>
+        <li><b>SZTE Endoszkópos ambulancia</b> <span>– Szegedi Tudományegyetem, 2023</span></li>
+        <li><b>Tanműhely kialakítása</b> <span>– Szegedi Szakképzési Centrum, 2023</span></li>
+        <li><b>Márvány utcai sportpálya</b> <span>– Szeged Megyei Jogú Város, 2024</span></li>
+        <li><b>Szegedi Biológiai Kutatóközpont</b> <span>– folyamatos karbantartási és felújítási munkák</span></li>
+        <li><b>Szegedi Sport és Fürdők</b> <span>– létesítmények karbantartása és felújítása</span></li>
+        <li><b>Szegedi Evangélikus Kollégium</b> <span>– vizesblokkok felújítása</span></li>
+        <li><b>Mezőhegyes, zöld város kialakítása</b> <span>– településfejlesztési projekt</span></li>
+        <li><b>DAKK Zrt., Sole-Mizo Zrt.</b> <span>– ipari telephelyi felújítások, karbantartás</span></li>
+      </ul>
+      <p class="note" style="margin-top:14px">A projektek a szikiep.hu referencialistájáról és nyilvános közbeszerzési adatokból származnak. Teljes lista: <a href="https://szikiep.hu/referencia/">szikiep.hu/referencia</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="szolgaltatasok">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Szolgáltatások</div>
+      <h2>Fővállalkozóként viszünk végig egy beruházást</h2>
+      <p class="lead">Egy felelős kivitelező a teljes projektre: a szerződéstől az átadásig, a beruházó közvetlen megbízásából.</p>
+    </div>
+    <div class="svc">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Generálkivitelezés</h3>
+        <p>Magasépítési és átalakítási projektek teljes körű lebonyolítása, alvállalkozók koordinálása, költség- és határidő-felelősség egy kézben.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+        <h3>Középületek felújítása és energetikája</h3>
+        <p>Iskolák, intézmények, idősotthonok és közfeladatot ellátó épületek korszerűsítése: épületgépészeti és építőipari munkák egy kézből.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 3V10l6 3V6h6v15zM7 17h2M12 17h2M17 17h2"/></svg></div>
+        <h3>Ipari és irodaépületek</h3>
+        <p>Üzem- és csarnoképítés, átalakítás, irodák kialakítása, vállalati telephelyek fejlesztése.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11a2.1 2.1 0 00-3-3L5 16zM14 7l3 3M4 4h6M4 8h3"/></svg></div>
+        <h3>Fővállalkozás tervezés-kivitelezéssel</h3>
+        <p>Tervezéssel együtt vállalt projektek: a koncepciótól az engedélyezésen át a kulcsrakész átadásig, szakági tervezők bevonásával.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="megrendeloink">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Megrendelőink</div>
+      <h2>Kikkel dolgozunk</h2>
+      <p class="lead">Közületi és vállalati megrendelők, jellemzően közbeszerzési vagy más, szerződéses eljárásban.</p>
+    </div>
+    <div class="cust">
+      <div class="c"><h3>Önkormányzatok és intézményeik</h3><p>Szeged Megyei Jogú Város, településfejlesztési projektek, szociális és oktatási intézmények.</p></div>
+      <div class="c"><h3>Egyetem és kutatóintézet</h3><p>Szegedi Tudományegyetem, Szegedi Biológiai Kutatóközpont, laboratóriumi és klinikai terek.</p></div>
+      <div class="c"><h3>Oktatás és szakképzés</h3><p>Szegedi Szakképzési Centrum, Szegedi Evangélikus Kollégium.</p></div>
+      <div class="c"><h3>Cégek és ipari megrendelők</h3><p>DAKK Zrt., Sole-Mizo Zrt. és más vállalati, ipari telephelyek.</p></div>
+      <div class="c"><h3>Befektetők és fejlesztők</h3><p>Saját beruházásunk, a Safari Hotel is megmutatja, hogyan gondolkodunk egy beruházó szemével.</p></div>
+      <div class="c"><h3>Tervezőirodák</h3><p>Tervező és mérnökiroda partnerekkel közösen, tervezés-kivitelezési projektekben.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Együttműködés</div>
+      <h2>Így dolgozunk veled</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Egyeztetés</h3><p>Megismerjük a beruházás célját, helyszínét, határidejét és a költségkeretet.</p></div>
+      <div class="step"><h3>Felmérés és ajánlat</h3><p>Helyszíni felmérés, részletes, tételes árajánlat vagy közbeszerzési ajánlat.</p></div>
+      <div class="step"><h3>Kivitelezés</h3><p>Egy felelős építésvezető, rendszeres tájékoztatás, műszaki ellenőrrel egyeztetve.</p></div>
+      <div class="step"><h3>Átadás</h3><p>Műszaki átadás-átvétel, dokumentáció, jótállás.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="ajanlatkeres">
+  <div class="wrap wrapgrid">
+    <div>
+      <div class="eyebrow" style="color:var(--orange)">Ajánlatkérés</div>
+      <h2>Mondja el, mekkora beruházásról van szó</h2>
+      <p class="lead">Néhány alapadat alapján gyorsan megmondjuk, hogy a projekt illeszkedik-e a profilunkhoz, és ki az, aki felveszi Önnel a kapcsolatot.</p>
+      <div class="fit"><b>Fontos:</b> generálkivitelezői feladatokat vállalunk, jellemzően nettó 50 M Ft feletti értékben. Lakossági és 50 M Ft alatti munkát nem vállalunk.</div>
+    </div>
+    <form class="rfq" id="rfq" novalidate>
+      <div class="f2">
+        <div class="field"><label for="org">Szervezet / cég neve</label><input id="org" name="org" type="text" placeholder="pl. önkormányzat, intézmény, cég" autocomplete="organization"></div>
+        <div class="field"><label for="who">Kapcsolattartó neve</label><input id="who" name="who" type="text" autocomplete="name"></div>
+        <div class="field"><label for="mail">E-mail</label><input id="mail" name="mail" type="email" autocomplete="email"></div>
+        <div class="field"><label for="tel">Telefonszám</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="typ">Projekt típusa</label>
+          <select id="typ" name="typ">
+            <option value="">Válasszon…</option>
+            <option>Középület felújítása, energetikai korszerűsítés</option>
+            <option>Új építés (közintézmény, ipari, iroda)</option>
+            <option>Ipari / üzemi átalakítás</option>
+            <option>Tervezés-kivitelezés (fővállalkozás)</option>
+            <option>Egyéb nagyobb beruházás</option>
+          </select></div>
+        <div class="field"><label for="val">Becsült nettó érték</label>
+          <select id="val" name="val">
+            <option value="">Válasszon…</option>
+            <option value="lt50">50 M Ft alatt</option>
+            <option value="50-200">50–200 M Ft</option>
+            <option value="200-800">200–800 M Ft</option>
+            <option value="gt800">800 M Ft felett</option>
+          </select></div>
+        <div class="field"><label for="loc">Helyszín (település)</label><input id="loc" name="loc" type="text" placeholder="pl. Szeged, Hódmezővásárhely"></div>
+        <div class="field"><label for="dl">Kivitelezés tervezett kezdete / határideje</label><input id="dl" name="dl" type="date"></div>
+      </div>
+      <div class="field"><label for="msg">Megjegyzés</label><textarea id="msg" name="msg" placeholder="Rövid leírás, tervdokumentáció állapota, közbeszerzési eljárás van-e folyamatban…"></textarea></div>
+      <div class="warn" id="warn" role="alert">50 M Ft alatti munkát nem vállalunk. Köszönjük megértését, ebben az esetben kérjük, keressen helyi szakipari vállalkozót.</div>
+      <p class="rule">Generálkivitelezést jellemzően nettó 50 M Ft feletti projektekre vállalunk. 50 M Ft alatti munkát nem vállalunk.</p>
+      <button class="btn" type="submit" id="send">Ajánlatkérés elküldése</button>
+      <div class="okmsg" id="ok" role="status">Demó: az űrlap nem küld el adatot. Éles oldalon itt jelenne meg a visszaigazolás.</div>
+      <p class="demo-note">Mintaoldal: az űrlap csak a szűrést szemlélteti, nem küld és nem tárol adatot.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="lg"><img src="img/logo.png" alt="SZIKI-ÉP Kft." width="128" height="44"></div>
+        <p>SZIKI-ÉP Építőipari, Kereskedelmi és Vendéglátóipari Kft.<br>Generálkivitelező, Szeged.</p>
+        <p style="font-size:.8rem">Cégjegyzékszám: 06 09 011766<br>Adószám: 14101094-2-06</p>
+      </div>
+      <div>
+        <h4>Kapcsolat</h4>
+        <p><a href="mailto:iroda@tures.hu">iroda@tures.hu</a></p>
+        <p><a href="tel:+3662444771">+36 62 444 771</a></p>
+        <p>6725 Szeged, Kálvária sgt. 96/G.</p>
+      </div>
+      <div>
+        <h4>Kövessen minket</h4>
+        <div class="soc"><a href="#" onclick="return false" title="Placeholder: a céges LinkedIn-oldal még nincs létrehozva" aria-label="LinkedIn (placeholder)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.5h4v11H3zM10 9.5h3.8v1.6h.1c.6-1 1.9-1.9 3.8-1.9 4 0 4.8 2.6 4.8 6V20.5h-4v-5c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6v5.1h-4z"/></svg>LinkedIn (hamarosan)</a></div>
+        <p style="margin-top:16px;font-size:.8rem"><a href="#" onclick="return false">Adatvédelmi tájékoztató</a> · <a href="#" onclick="return false">Impresszum</a><br><span style="color:#7d8fa8">(placeholder, a szövegeket a cég jóváhagyásával kell elkészíteni)</span></p>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 SZIKI-ÉP Kft. Minden jog fenntartva.</span><span>Mintaoldal – javaslat, nem éles honlap.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded',false)}});
+  var val=document.getElementById('val'),warn=document.getElementById('warn'),send=document.getElementById('send'),ok=document.getElementById('ok');
+  function check(){var small=val.value==='lt50';warn.classList.toggle('on',small);send.disabled=small;ok.classList.remove('on')}
+  val.addEventListener('change',check);
+  document.getElementById('rfq').addEventListener('submit',function(e){e.preventDefault();if(val.value==='lt50')return;ok.classList.add('on')});
+})();
+</script>
+</body>
+</html>
